@@ -1,3 +1,3 @@
-# Upleveled
+# UpLeveled
 
-see lesson readmes for more info
+See lesson readmes for more info

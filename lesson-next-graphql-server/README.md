@@ -47,6 +47,12 @@ yarn dev
 
 ### Add SQL
 
+Make sure that your PostgreSQL is running. You can start it with:
+
+```sh
+postgres
+```
+
 Set up the database:
 
 ```sh

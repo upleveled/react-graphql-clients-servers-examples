@@ -49,7 +49,7 @@ _Hint_: Get Luke by his id, which you can get from `allPeople`.
 
 - Query the population and all the residents on the planet Naboo.
 
-2. Use the Github GraphQL API `https://developer.github.com/v4/explorer/` to query
+2. Use the [GitHub GraphQL API](https://docs.github.com/en/graphql/overview/explorer) to query
 
 - Your repositories (first 10)
 - Extend the query to show the default branch of each repository
@@ -61,16 +61,16 @@ https://www.apollographql.com/docs/react/get-started/
 
 ## Exercise
 
-Build you own Profile page based on Github e.g. https://github.com/nikgraf using the Github GraphQL Endpoint
+Build you own Profile page based on GitHub e.g. https://github.com/nikgraf using the GitHub GraphQL Endpoint
 
 - Show your name
-- Show your Github Avatar
+- Show your GitHub Avatar
 - Show a list of (public) repositories
 
 Other public APIs https://github.com/APIs-guru/graphql-apis
 
 1. Generate an access token:
-   https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
+   https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 _Hint_:
 

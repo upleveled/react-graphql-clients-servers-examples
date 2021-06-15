@@ -1,4 +1,4 @@
-# (Next) GraphQL Server
+# Next.js GraphQL Server
 
 ## Setup
 
@@ -7,7 +7,7 @@ First, create a repository on GitHub, clone it and `cd` into the directory.
 Then run:
 
 ```sh
-npx create-next-app --example api-routes-apollo-server .
+yarn create next-app --example api-routes-apollo-server .
 ```
 
 ## Development

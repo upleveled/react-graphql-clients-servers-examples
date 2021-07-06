@@ -82,7 +82,7 @@ PGUSERNAME=todos_next
 PGPASSWORD=todos_next
 ```
 
-Copy the migration folder from https://github.com/nikgraf/upleveled-lessons/tree/master/lesson-next-graphql-server/todos and run the migrations
+Copy the migration folder from https://github.com/upleveled/react-graphql-frontend-backend-lessons/tree/main/lesson-next-graphql-server/todos and run the migrations
 
 ```sh
 yarn dotenv ley up

@@ -1,6 +1,7 @@
 {
   "name": "basic-server",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "author": "Nik Graf",
   "license": "MIT",

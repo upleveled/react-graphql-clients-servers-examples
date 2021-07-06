@@ -1,12 +1,12 @@
-import fetch from 'isomorphic-unfetch'
+import fetch from 'isomorphic-unfetch';
 
 const Index = ({ users }) => (
   <div>
-    {users.map((user, i) => (
-      <div key={i}>{user.name}</div>
+    {users.map((user) => (
+      <div key={user.id}>{user.name}</div>
     ))}
   </div>
-)
+);
 
 Index.getInitialProps = async () => {
   const response = await fetch('http://localhost:3000/api/graphql', {
@@ -14,14 +14,14 @@ Index.getInitialProps = async () => {
     headers: {
       'Content-type': 'application/json',
     },
-    body: JSON.stringify({ query: '{ users { name } }' }),
-  })
+    body: JSON.stringify({ query: '{ users { id, name } }' }),
+  });
 
   const {
     data: { users },
-  } = await response.json()
+  } = await response.json();
 
-  return { users }
-}
+  return { users };
+};
 
-export default Index
+export default Index;

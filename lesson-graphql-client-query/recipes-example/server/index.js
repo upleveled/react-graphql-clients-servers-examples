@@ -2,8 +2,9 @@
 const delayArgument = parseInt(process.argv[2], 10);
 global.delay = isNaN(delayArgument) ? 0 : delayArgument;
 
-const { ApolloServer, gql } = require("apollo-server");
-const resolvers = require("./resolvers");
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const { ApolloServer, gql } = require('apollo-server');
+const resolvers = require('./resolvers');
 
 const typeDefs = gql`
   type Query {
@@ -24,7 +25,7 @@ const typeDefs = gql`
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
 });
 
 server.listen().then(({ url }) => {

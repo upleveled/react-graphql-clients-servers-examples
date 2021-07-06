@@ -1,4 +1,4 @@
-import { ApolloServer, gql } from "apollo-server-micro";
+import { ApolloServer, gql } from 'apollo-server-micro';
 
 const typeDefs = gql`
   type Query {
@@ -12,17 +12,21 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     users(parent, args, context) {
-      return [{ name: "Nextjs" }, { name: "Nik" }];
-    }
-  }
+      console.log(parent, args, context);
+      return [
+        { id: 1, name: 'Nextjs' },
+        { id: 2, name: 'Nik' },
+      ];
+    },
+  },
 };
 
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
 export const config = {
   api: {
-    bodyParser: false
-  }
+    bodyParser: false,
+  },
 };
 
-export default apolloServer.createHandler({ path: "/api/graphql" });
+export default apolloServer.createHandler({ path: '/api/graphql' });

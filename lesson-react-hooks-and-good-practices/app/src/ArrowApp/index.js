@@ -1,5 +1,5 @@
-import React from "react";
-import Arrow3 from "./Arrow3";
+import React from 'react';
+import Arrow2 from './Arrow2';
 
 function App() {
   return (

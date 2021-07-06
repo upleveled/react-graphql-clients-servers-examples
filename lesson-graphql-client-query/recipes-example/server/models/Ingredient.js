@@ -1,5 +1,5 @@
-const { ingredientDb } = require("./db");
-const { addId } = require("./utils");
+const { ingredientDb } = require('./db');
+const { addId, addIds } = require('./utils');
 
 /**
  * Get an ingredient by its _id
@@ -8,10 +8,12 @@ const { addId } = require("./utils");
  *
  * @returns {Promise<Ingredient>}
  */
-const getIngredient = async _id => {
-  const ingredient = await ingredientDb.find({ _id }).then(result => result && result[0]);
+const getIngredient = async (id) => {
+  const ingredient = await ingredientDb
+    .find({ _id: id })
+    .then((result) => result && result[0]);
   return addId(ingredient);
-}
+};
 
 /**
  * Add an ingredient with a certain name
@@ -19,10 +21,10 @@ const getIngredient = async _id => {
  * @param {String} name
  * @returns {Promise<NewIngredient>}
  */
-const addIngredient = async name => {
-  const ingredient = await Db.insert({ name });
+const addIngredient = async (name) => {
+  const ingredient = await ingredientDb.insert({ name });
   return addId(ingredient);
-}
+};
 
 /**
  * Get a list of all ingredients
@@ -32,6 +34,6 @@ const addIngredient = async name => {
 const getIngredients = async () => {
   const ingredients = await ingredientDb.find({});
   return addIds(ingredients);
-}
+};
 
 module.exports = { getIngredient, addIngredient, getIngredients };

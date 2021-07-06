@@ -1,6 +1,7 @@
-import { ApolloServer, gql, makeExecutableSchema } from "apollo-server-micro";
-require("dotenv").config();
-const postgres = require("postgres");
+import { ApolloServer, gql, makeExecutableSchema } from 'apollo-server-micro';
+
+require('dotenv').config();
+const postgres = require('postgres');
 const sql = postgres();
 
 const typeDefs = gql`
@@ -27,24 +28,26 @@ const typeDefs = gql`
 
 const todos = [
   {
-    id: "1",
-    title: "Call Mum",
+    id: '1',
+    title: 'Call Mum',
     checked: true,
-    author: { name: "Max" },
+    author: { name: 'Max' },
   },
   {
-    id: "2",
-    title: "Make Coffee",
+    id: '2',
+    title: 'Make Coffee',
     checked: true,
-    author: { name: "Max" },
+    author: { name: 'Max' },
   },
   {
-    id: "3",
-    title: "Call Dad",
+    id: '3',
+    title: 'Call Dad',
     checked: false,
-    author: { name: "Max" },
+    author: { name: 'Max' },
   },
 ];
+
+console.log('todos', todos);
 
 async function getTodos() {
   return await sql`select * from todos`;
@@ -90,7 +93,7 @@ const resolvers = {
 export const schema = makeExecutableSchema({ typeDefs, resolvers });
 
 export default new ApolloServer({ schema }).createHandler({
-  path: "/api/graphql",
+  path: '/api/graphql',
 });
 
 export const config = {

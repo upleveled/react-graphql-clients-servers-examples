@@ -1,6 +1,6 @@
-const { sortBy } = require("ramda");
-const { recipeDb } = require("./db");
-const { addId, addIds } = require("./utils");
+const { sortBy } = require('ramda');
+const { recipeDb } = require('./db');
+const { addIds } = require('./utils');
 
 /**
  * Get a list of all the recipes that match the optionally provided filters
@@ -12,15 +12,15 @@ const { addId, addIds } = require("./utils");
  */
 const getRecipes = async ({ vegetarian, ingredient }) => {
   // Construct the filters
-  let filters = {};
+  const filters = {};
   if (vegetarian === true) filters.vegetarian = true;
   if (ingredient) {
     filters.ingredients = {
-      $elemMatch: ingredient
+      $elemMatch: ingredient,
     };
   }
   const recipes = await recipeDb.find(filters);
-  return sortBy(recipe => recipe.title.toLowerCase(), addIds(recipes));
+  return sortBy((recipe) => recipe.title.toLowerCase(), addIds(recipes));
 };
 
 /**
@@ -34,7 +34,7 @@ const getRecipes = async ({ vegetarian, ingredient }) => {
  *
  * @returns {Promise<NewRecipe>}
  */
-const addRecipe = async input => {
+const addRecipe = async (input) => {
   const recipe = await recipeDb.insert(input);
   return recipe;
 };

@@ -1,11 +1,11 @@
-import Head from "next/head";
 import {
   ApolloClient,
-  InMemoryCache,
-  gql,
   ApolloProvider,
+  gql,
+  InMemoryCache,
   useQuery,
-} from "@apollo/client";
+} from '@apollo/client';
+import Head from 'next/head';
 
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
@@ -47,7 +47,7 @@ const Profile = (props) => {
         <title>{data.user.login}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img src={data.user.avatarUrl} />
+      <img src={data.user.avatarUrl} alt="" />
       <ul>
         {data.user.repositories.nodes.map((repo) => {
           return <li key={repo.id}>{repo.name}</li>;

@@ -1,4 +1,5 @@
-const { ApolloServer, gql } = require("apollo-server");
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const { ApolloServer, gql } = require('apollo-server');
 
 // 1. Define the Schema
 const typeDefs = gql`
@@ -16,13 +17,13 @@ const typeDefs = gql`
 // 2. Data source
 const books = [
   {
-    title: "The Awakening",
-    author: "Kate Chopin",
+    title: 'The Awakening',
+    author: 'Kate Chopin',
     created_at: 3243463441256,
   },
   {
-    title: "City of Glass",
-    author: "Paul Auster",
+    title: 'City of Glass',
+    author: 'Paul Auster',
     created_at: 3243463441256,
   },
 ];

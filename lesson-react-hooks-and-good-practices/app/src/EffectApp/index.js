@@ -1,9 +1,5 @@
-import React, { useState } from "react";
-import Title from "./Title";
-import Drop from "./Drop";
-import DropII from "./DropII";
-import DropIII from "./DropIII";
-import DropIV from "./DropIV";
+import React, { useState } from 'react';
+import DropIV from './DropIV';
 
 function App() {
   const [count, setCount] = useState(0);

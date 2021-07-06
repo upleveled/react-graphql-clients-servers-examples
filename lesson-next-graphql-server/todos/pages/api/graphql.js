@@ -1,7 +1,10 @@
+import { ApolloServer, gql, makeExecutableSchema } from 'apollo-server-micro';
+
 require('dotenv').config();
 const postgres = require('postgres');
 const sql = postgres();
-import { ApolloServer, gql, makeExecutableSchema } from 'apollo-server-micro'
+
+console.log('sql', sql);
 
 const typeDefs = gql`
   type Query {
@@ -12,31 +15,31 @@ const typeDefs = gql`
     name: String
     username: String
   }
-`
+`;
 const users = [
   { name: 'Leeroy Jenkins', username: 'leeroy' },
   { name: 'Foo Bar', username: 'foobar' },
-]
+];
 
 const resolvers = {
   Query: {
     users() {
-      return users
+      return users;
     },
     user(parent, { username }) {
-      return users.find((user) => user.username === username)
+      return users.find((user) => user.username === username);
     },
   },
-}
+};
 
-export const schema = makeExecutableSchema({ typeDefs, resolvers })
+export const schema = makeExecutableSchema({ typeDefs, resolvers });
 
 export const config = {
   api: {
     bodyParser: false,
   },
-}
+};
 
 export default new ApolloServer({ schema }).createHandler({
   path: '/api/graphql',
-})
+});

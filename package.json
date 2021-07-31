@@ -4,18 +4,23 @@
   "main": "index.js",
   "repository": "git@github.com:upleveled/react-graphql-frontend-backend-lessons.git",
   "private": true,
-  "workspaces": [
-    "lesson-graphql-client-query/github-profile",
-    "lesson-graphql-client-query/github-profile-experiment",
-    "lesson-graphql-client-query/recipes-example/app",
-    "lesson-graphql-client-query/recipes-example/server",
-    "lesson-next-graphql-server/api-routes-graphql-app",
-    "lesson-next-graphql-server/basic-server",
-    "lesson-next-graphql-server/todos",
-    "lesson-next-graphql-server/todos2",
-    "lesson-next-graphql-server/todos3",
-    "lesson-react-hooks-and-good-practices/app"
-  ],
+  "workspaces": {
+    "packages": [
+      "lesson-graphql-client-query/github-profile",
+      "lesson-graphql-client-query/github-profile-experiment",
+      "lesson-graphql-client-query/recipes-example/app",
+      "lesson-graphql-client-query/recipes-example/server",
+      "lesson-next-graphql-server/api-routes-graphql-app",
+      "lesson-next-graphql-server/basic-server",
+      "lesson-next-graphql-server/todos",
+      "lesson-next-graphql-server/todos2",
+      "lesson-next-graphql-server/todos3",
+      "lesson-react-hooks-and-good-practices/app"
+    ],
+    "nohoist": [
+      "**/next"
+    ]
+  },
   "devDependencies": {
     "@next/eslint-plugin-next": "11.0.1",
     "@types/node": "16.4.7",

@@ -1,14 +1,16 @@
 import fetch from 'isomorphic-unfetch';
 
-const Index = ({ users }) => (
-  <div>
-    {users.map((user) => (
-      <div key={user.id}>{user.name}</div>
-    ))}
-  </div>
-);
+export default function Home({ users }) {
+  return (
+    <div>
+      {users.map((user) => (
+        <div key={user.id}>{user.name}</div>
+      ))}
+    </div>
+  );
+}
 
-Index.getInitialProps = async () => {
+export async function getServerSideProps() {
   const response = await fetch('http://localhost:3000/api/graphql', {
     method: 'POST',
     headers: {
@@ -21,7 +23,5 @@ Index.getInitialProps = async () => {
     data: { users },
   } = await response.json();
 
-  return { users };
-};
-
-export default Index;
+  return { props: { users } };
+}

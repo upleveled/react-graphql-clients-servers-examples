@@ -5,6 +5,7 @@ const typeDefs = gql`
     users: [User!]!
   }
   type User {
+    id: Int
     name: String
   }
 `;
@@ -28,5 +29,7 @@ export const config = {
     bodyParser: false,
   },
 };
+
+await apolloServer.start();
 
 export default apolloServer.createHandler({ path: '/api/graphql' });

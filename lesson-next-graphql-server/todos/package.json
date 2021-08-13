@@ -14,7 +14,7 @@
     "dotenv": "10.0.0",
     "graphql": "15.5.1",
     "ley": "0.7.1",
-    "next": "latest",
+    "next": "11.1.0",
     "postgres": "1.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"

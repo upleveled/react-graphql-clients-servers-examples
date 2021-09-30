@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/client": "3.4.13",
+    "@apollo/client": "3.4.15",
     "graphql": "15.6.0",
     "next": "11.1.2",
     "react": "17.0.2",

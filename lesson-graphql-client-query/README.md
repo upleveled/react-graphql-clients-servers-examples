@@ -56,8 +56,9 @@ _Hint_: Get Luke by his id, which you can get from `allPeople`.
 
 ## Query data
 
-Create new app with `yarn create react-app app` and go through
-https://www.apollographql.com/docs/react/get-started/
+First, create a repository on GitHub, clone it and `cd` into the directory.
+
+Then create a new `create-react-app` with `yarn create react-app .` and go through https://www.apollographql.com/docs/react/get-started/
 
 ## Exercise
 

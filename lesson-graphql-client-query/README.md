@@ -58,7 +58,9 @@ _Hint_: Get Luke by his id, which you can get from `allPeople`.
 
 First, create a repository on GitHub, clone it and `cd` into the directory.
 
-Then create a new `create-react-app` with `yarn create react-app .` and go through https://www.apollographql.com/docs/react/get-started/
+Then create a new React app with `yarn create react-app .` and install [the ESLint config](https://github.com/upleveled/eslint-config-upleveled/)
+
+Then we will go through https://www.apollographql.com/docs/react/get-started/
 
 ## Exercise
 

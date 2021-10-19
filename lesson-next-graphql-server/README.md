@@ -67,6 +67,12 @@ CREATE USER todos_next WITH ENCRYPTED PASSWORD 'todos_next';
 GRANT ALL PRIVILEGES ON DATABASE todos_next TO todos_next;
 ```
 
+Once you have succesfully run these queries, quit `psql` with:
+
+```bash
+\q
+```
+
 Add dependencies:
 
 ```sh
@@ -82,13 +88,18 @@ PGUSERNAME=todos_next
 PGPASSWORD=todos_next
 ```
 
-Copy the migration folder from https://github.com/upleveled/react-graphql-frontend-backend-lessons/tree/main/lesson-next-graphql-server/todos and run the migrations
+Switch back to your editor and create a folder called `migrations`. In the `migrations` folder:
+
+1. Create the file `00000-create-todos-table.js` and copy and paste the content from https://github.com/upleveled/react-graphql-frontend-backend-lessons/blob/main/lesson-next-graphql-server/todos/migrations/00000-create-todos-table.js
+2. Create the file `00001-insert-todos.js` and copy and paste the content from https://github.com/upleveled/react-graphql-frontend-backend-lessons/blob/main/lesson-next-graphql-server/todos/migrations/00001-insert-todos.js
+
+In a terminal, run the migrations:
 
 ```sh
 yarn dotenv ley up
 ```
 
-JS to initialize the DB (do not do this in Prod?!? (connection management))
+Connect to the database:
 
 ```js
 require("dotenv").config();

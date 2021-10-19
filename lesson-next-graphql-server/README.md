@@ -53,13 +53,13 @@ Make sure that your PostgreSQL is running. You can start it with:
 postgres
 ```
 
-Set up the database:
+Open a new tab in your terminal. In this new tab, connect to the database:
 
 ```sh
 psql postgres
 ```
 
-In there run
+Once you are connected, run the following queries:
 
 ```sql
 CREATE DATABASE todos_next;

@@ -1,17 +1,17 @@
-// Create the products table
+// Create the todos table
 exports.up = async (sql) => {
-  sql`
-      CREATE TABLE todos(
-        id SERIAL PRIMARY KEY,
-        title VARCHAR NOT NULL,
-        checked BOOLEAN NOT NULL
-      )
-    `;
+  await sql`
+    CREATE TABLE todos(
+      id SERIAL PRIMARY KEY,
+      title VARCHAR NOT NULL,
+      checked BOOLEAN NOT NULL
+    )
+  `;
 };
 
-// Delete the products table
+// Delete the todos table
 exports.down = async (sql) => {
-  sql`
-      DROP TABLE products
-    `;
+  await sql`
+    DROP TABLE todos
+  `;
 };

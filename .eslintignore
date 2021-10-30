@@ -1,4 +1,5 @@
 *.config.js
+*.config.cjs
 build
 
 # Next.js build folder

@@ -1,15 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import './index.css';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
-  uri: "https://api.github.com/graphql",
+  uri: 'https://api.github.com/graphql',
   cache: new InMemoryCache(),
   headers: {
-    authorization: "Bearer TODO",
+    authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
   },
 });
 
@@ -19,7 +19,7 @@ ReactDOM.render(
       <App />
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

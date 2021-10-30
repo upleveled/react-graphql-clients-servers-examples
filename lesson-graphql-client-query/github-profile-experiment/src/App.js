@@ -1,8 +1,8 @@
-import React from "react";
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery } from '@apollo/client';
+import React from 'react';
 
 const profileQuery = gql`
-  query($username: String!, $first: Int!) {
+  query ($username: String!, $first: Int!) {
     user(login: $username) {
       avatarUrl
       company
@@ -22,14 +22,14 @@ const profileQuery = gql`
 
 function App() {
   // example url: http://localhost:3000/karlhorky?first=5
-  const username = window.location.pathname.replace("/", "");
-  const limit = parseInt(window.location.search.replace("?first=", ""));
+  const username = window.location.pathname.replace('/', '') || 'karlhorky';
+  const limit = parseInt(window.location.search.replace('?first=', '')) || 10;
 
   const { loading, error, data } = useQuery(profileQuery, {
     variables: { username: username, first: limit },
   });
-  if (loading) return "Loading …";
-  if (error) return "Something went wrong!";
+  if (loading) return 'Loading …';
+  if (error) return 'Something went wrong!';
 
   // console.log(data.user.repositories);
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useRef } from 'react';
 
 function TextInputWithFocusButton() {
   const inputElement = useRef(null);
@@ -10,7 +10,7 @@ function TextInputWithFocusButton() {
 
   return (
     <Fragment>
-      <input ref={inputElement} type="text" />
+      <input ref={inputElement} />
       <button onClick={onButtonClick}>Focus on the Input</button>
     </Fragment>
   );

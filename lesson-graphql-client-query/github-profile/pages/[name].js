@@ -8,10 +8,10 @@ import {
 import Head from 'next/head';
 
 const client = new ApolloClient({
-  uri: "https://api.github.com/graphql",
+  uri: 'https://api.github.com/graphql',
   cache: new InMemoryCache(),
   headers: {
-    authorization: "Bearer TODO",
+    authorization: 'Bearer TODO',
   },
 });
 
@@ -68,6 +68,6 @@ export default function Home(props) {
   );
 }
 
-export async function getServerSideProps(context) {
+export function getServerSideProps(context) {
   return { props: { username: context.params.name } };
 }

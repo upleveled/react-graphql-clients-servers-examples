@@ -8,7 +8,7 @@ module.exports = {
   //   name: (actualR) =>
   // },
   Query: {
-    recipes: async (parent, parameters) => {
+    recipes: (parent, parameters) => {
       return getRecipes({ vegetarian: parameters.vegetarian });
     },
   },

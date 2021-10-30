@@ -1,9 +1,9 @@
-import React from "react";
-import { gql } from "apollo-boost";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+import React from 'react';
 
 const recipesQuery = gql`
-  query($veggie: Boolean!) {
+  query ($veggie: Boolean!) {
     recipes(vegetarian: $veggie) {
       title
       vegetarian
@@ -13,15 +13,15 @@ const recipesQuery = gql`
 
 function Recipes() {
   const [filterForVeggie, setFilterForVeggie] = React.useState(false);
-  const Result = useQuery(recipesQuery, {
-    variables: { veggie: filterForVeggie }
+  const result = useQuery(recipesQuery, {
+    variables: { veggie: filterForVeggie },
   });
 
-  if (Result.loading) {
+  if (result.loading) {
     return <div>Loading …</div>;
   }
 
-  if (Result.error) {
+  if (result.error) {
     return <div>Something wrong.</div>;
   }
 
@@ -31,12 +31,18 @@ function Recipes() {
         <input
           type="checkbox"
           checked={filterForVeggie}
-          onChange={evt => setFilterForVeggie(evt.target.checked)}
+          onChange={(evt) => setFilterForVeggie(evt.target.checked)}
         />
         filter for veggie
       </label>
-      {Result.data.recipes.map(recipe => (
-        <div>{recipe.title}</div>
+      {result.data.recipes.map((recipe) => (
+        <div
+          key={`recipe-${recipe.title
+            .toLowerCase()
+            .replace(/[^a-zA-Z0-9]+/, '-')}`}
+        >
+          {recipe.title}
+        </div>
       ))}
     </div>
   );

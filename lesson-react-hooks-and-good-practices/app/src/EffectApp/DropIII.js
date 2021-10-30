@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-function App(props) {
+function App() {
   function onOnline(evt) {
-    console.log("online", evt);
+    console.log('online', evt);
   }
   useEffect(() => {
-    window.addEventListener("online", onOnline);
+    window.addEventListener('online', onOnline);
     return () => {
-      window.removeEventListener("online", onOnline);
+      window.removeEventListener('online', onOnline);
     };
   }, []);
 

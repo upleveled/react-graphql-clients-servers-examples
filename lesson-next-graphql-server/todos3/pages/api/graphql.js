@@ -1,11 +1,13 @@
-import { ApolloServer, gql, makeExecutableSchema } from "apollo-server-micro";
-require("dotenv").config();
-const postgres = require("postgres");
+import { makeExecutableSchema } from '@graphql-tools/schema';
+import { ApolloServer, gql } from 'apollo-server-micro';
+
+require('dotenv').config();
+const postgres = require('postgres');
 const sql = postgres();
 
 const users = [
-  { name: "Leeroy Jenkins", username: "leeroy" },
-  { name: "Foo Bar", username: "foobar" },
+  { name: 'Leeroy Jenkins', username: 'leeroy' },
+  { name: 'Foo Bar', username: 'foobar' },
 ];
 
 // const todos = [
@@ -92,6 +94,8 @@ export const config = {
   },
 };
 
-export default new ApolloServer({ schema }).createHandler({
-  path: "/api/graphql",
+const server = new ApolloServer({ schema });
+await server.start();
+export default server.createHandler({
+  path: '/api/graphql',
 });

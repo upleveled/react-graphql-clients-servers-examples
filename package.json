@@ -18,7 +18,8 @@
       "lesson-react-hooks-and-good-practices/app"
     ],
     "nohoist": [
-      "**/next"
+      "**/next",
+      "api-routes-apollo-server-3/**/*"
     ]
   },
   "devDependencies": {

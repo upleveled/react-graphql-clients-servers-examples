@@ -6,7 +6,7 @@
   "author": "Nik Graf",
   "license": "MIT",
   "dependencies": {
-    "apollo-server": "3.4.0",
+    "apollo-server": "3.4.1",
     "graphql": "15.7.2"
   }
 }

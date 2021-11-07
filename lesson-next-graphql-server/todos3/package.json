@@ -10,7 +10,7 @@
     "ley": "dotenv ley"
   },
   "dependencies": {
-    "apollo-server-micro": "3.4.1",
+    "apollo-server-micro": "3.5.0",
     "dotenv": "10.0.0",
     "dotenv-cli": "4.1.0",
     "graphql": "16.0.1",

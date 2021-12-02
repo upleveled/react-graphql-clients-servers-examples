@@ -12,7 +12,7 @@
   "dependencies": {
     "apollo-server-micro": "3.5.0",
     "dotenv": "10.0.0",
-    "dotenv-cli": "4.1.0",
+    "dotenv-cli": "4.1.1",
     "graphql": "16.0.1",
     "ley": "0.7.1",
     "micro": "^9.3.4",

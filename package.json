@@ -19,6 +19,8 @@
     ],
     "nohoist": [
       "**/next",
+      "**/babel-preset-react-app",
+      "**/babel-preset-react-app/*",
       "api-routes-apollo-server-3/**/*"
     ]
   },

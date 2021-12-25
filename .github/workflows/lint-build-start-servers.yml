@@ -26,12 +26,13 @@ jobs:
       # create-react-app doesn't have a start script
       - run: yarn workspace recipes-app build
 
-      - run: yarn workspace recipes-server build
+      # No build script required for this package
       - run: timeout 6 yarn workspace recipes-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
       - run: yarn workspace api-routes-graphql build
       - run: timeout 6 yarn workspace api-routes-graphql start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
+      # No build script required for this package
       - run: timeout 6 yarn workspace basic-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
       - run: yarn workspace api-routes-apollo-server-3 build

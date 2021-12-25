@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
-      - run: yarn
+      - run: yarn --frozen-lockfile --prefer-offline
       - run: yarn eslint . --max-warnings 0
 
       - run: yarn workspace github-profile build

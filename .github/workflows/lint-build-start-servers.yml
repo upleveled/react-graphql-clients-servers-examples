@@ -20,11 +20,11 @@ jobs:
       # https://stackoverflow.com/a/63643845/1268612
       - run: timeout 6 yarn workspace github-profile start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      # create-react-app doesn't have a start script
       - run: yarn workspace github-profile-experiment build
+      - run: timeout 6 yarn workspace github-profile-experiment start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      # create-react-app doesn't have a start script
       - run: yarn workspace recipes-app build
+      - run: timeout 6 yarn workspace recipes-app start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
       # No build script required for this package
       - run: timeout 6 yarn workspace recipes-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi

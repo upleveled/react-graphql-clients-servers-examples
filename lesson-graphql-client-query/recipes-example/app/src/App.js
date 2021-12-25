@@ -1,11 +1,10 @@
-import React from "react";
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "@apollo/react-hooks";
-import Recipes from "./Recipes";
-import AddRecipe from "./AddRecipe";
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+import AddRecipe from './AddRecipe';
+import Recipes from './Recipes';
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000"
+  uri: 'http://localhost:4000',
 });
 
 function App() {

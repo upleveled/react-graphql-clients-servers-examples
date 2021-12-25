@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import React from 'react';
+import { useState } from 'react';
 
 const recipesQuery = gql`
   query ($veggie: Boolean!) {
@@ -12,7 +12,7 @@ const recipesQuery = gql`
 `;
 
 function Recipes() {
-  const [filterForVeggie, setFilterForVeggie] = React.useState(false);
+  const [filterForVeggie, setFilterForVeggie] = useState(false);
   const result = useQuery(recipesQuery, {
     variables: { veggie: filterForVeggie },
   });

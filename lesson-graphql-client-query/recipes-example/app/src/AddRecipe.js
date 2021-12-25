@@ -1,6 +1,6 @@
 import { useMutation } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const addRecipeMutation = gql`
   mutation addRecipe($title: String!) {
@@ -34,8 +34,8 @@ function AddRecipe() {
         placeholder="Recipe title"
       />
       <button
-        onClick={() => {
-          addRecipe();
+        onClick={async () => {
+          await addRecipe();
         }}
         disabled={result.loading}
       >

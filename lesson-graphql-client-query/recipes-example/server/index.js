@@ -28,6 +28,11 @@ const server = new ApolloServer({
   resolvers,
 });
 
-server.listen().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+server
+  .listen()
+  .then(({ url }) => {
+    console.log(`🚀 Server ready at ${url}`);
+  })
+  .catch((err) => {
+    console.error('Error starting server:', err);
+  });

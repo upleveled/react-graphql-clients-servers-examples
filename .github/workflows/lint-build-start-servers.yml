@@ -1,0 +1,38 @@
+name: Lint, Build, Start Servers
+on: push
+
+jobs:
+  build:
+    name: Lint, Build, Start Servers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
+      - run: yarn eslint . --max-warnings 0
+
+      - run: yarn workspace github-profile build
+      # Run server for 6 seconds, and succeed if it didn't throw an error
+      # https://stackoverflow.com/a/63643845/1268612
+      - run: timeout 6 yarn workspace github-profile start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      # create-react-app doesn't have a start script
+      - run: yarn workspace github-profile-experiment build
+
+      # create-react-app doesn't have a start script
+      - run: yarn workspace recipes-app build
+
+      - run: yarn workspace recipes-server build
+      - run: timeout 6 yarn workspace recipes-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: yarn workspace api-routes-graphql build
+      - run: timeout 6 yarn workspace api-routes-graphql start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: timeout 6 yarn workspace basic-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: yarn workspace api-routes-apollo-server-3 build
+      - run: timeout 6 yarn workspace api-routes-apollo-server-3 start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi

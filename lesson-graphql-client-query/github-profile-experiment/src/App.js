@@ -1,5 +1,4 @@
 import { gql, useQuery } from '@apollo/client';
-import React from 'react';
 
 const profileQuery = gql`
   query ($username: String!, $first: Int!) {
@@ -28,7 +27,7 @@ function App() {
   const { loading, error, data } = useQuery(profileQuery, {
     variables: { username: username, first: limit },
   });
-  if (loading) return 'Loading …';
+  if (loading) return 'Loading...';
   if (error) return 'Something went wrong!';
 
   // console.log(data.user.repositories);

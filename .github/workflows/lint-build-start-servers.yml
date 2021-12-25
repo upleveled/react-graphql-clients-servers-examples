@@ -12,7 +12,26 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
-      - run: yarn --frozen-lockfile --prefer-offline
+      - name: Set yarn cache directory
+        run: echo "::set-env name=YARN_CACHE::$(yarn cache dir)"
+      - name: Cache node modules
+        id: yarn-workspaces-cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ${{ env.YARN_CACHE }}
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install dependencies on cache miss
+        if: steps.yarn-workspaces-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
       - run: yarn eslint . --max-warnings 0
 
       - run: yarn workspace github-profile build

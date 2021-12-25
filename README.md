@@ -1,3 +1,3 @@
 # React + GraphQL Frontend and Backend Lessons
 
-See lesson readmes for more info
+Refer to the lesson readmes for further information.

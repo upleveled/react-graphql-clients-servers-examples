@@ -15,7 +15,7 @@ jobs:
         run: echo "::set-env name=YARN_CACHE::$(yarn cache dir)"
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      - name: Cache node modules
+      - name: Cache node modules and yarn cache
         id: yarn-workspaces-cache
         uses: actions/cache@v2
         env:

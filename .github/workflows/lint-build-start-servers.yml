@@ -15,21 +15,17 @@ jobs:
         run: echo "::set-env name=YARN_CACHE::$(yarn cache dir)"
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      - name: Cache node modules and yarn cache
+      - name: Cache node modules
         id: yarn-workspaces-cache
         uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
         with:
           path: |
             ${{ env.YARN_CACHE }}
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          key: build-node-modules-cache-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            build-node-modules-cache-
       - name: If cache miss, install dependencies
         if: steps.yarn-workspaces-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile

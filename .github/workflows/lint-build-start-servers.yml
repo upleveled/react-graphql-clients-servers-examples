@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Install dependencies on cache miss
+      - name: If cache miss, install dependencies
         if: steps.yarn-workspaces-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
       - run: yarn eslint . --max-warnings 0

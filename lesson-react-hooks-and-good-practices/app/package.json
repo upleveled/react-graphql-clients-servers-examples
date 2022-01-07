@@ -30,6 +30,6 @@
     ]
   },
   "devDependencies": {
-    "prop-types": "15.8.0"
+    "prop-types": "15.8.1"
   }
 }

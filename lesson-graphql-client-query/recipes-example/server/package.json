@@ -6,7 +6,7 @@
     "apollo-server": "3.6.1",
     "graphql": "16.2.0",
     "nedb-promise": "2.0.1",
-    "ramda": "0.27.1"
+    "ramda": "0.27.2"
   },
   "devDependencies": {
     "nodemon": "2.0.15"

@@ -2,7 +2,12 @@
 
 ## Setup
 
-First, create a repository on GitHub, clone it and `cd` into the directory.
+First, create a repository on GitHub, clone it and `cd` into the directory:
+
+```sh
+git clone <repo url>
+cd <repo name>
+```
 
 Then run:
 

@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "apollo-server-micro": "2.13.1",
+    "dotenv": "^16.0.0",
+    "dotenv-cli": "^5.0.0",
+    "graphql": "15.0.0",
+    "ley": "^0.7.1",
+    "next": "latest",
+    "postgres": "^1.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

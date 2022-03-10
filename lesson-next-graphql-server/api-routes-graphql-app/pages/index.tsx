@@ -10,7 +10,7 @@ type Props =
       errors: string[];
     };
 
-const GET_BOOKS = gql`
+const getBooksQuery = gql`
   query {
     books {
       id
@@ -20,7 +20,8 @@ const GET_BOOKS = gql`
 `;
 
 export default function Home(props: Props) {
-  const [getBooks, { loading, error, data }] = useLazyQuery(GET_BOOKS);
+  const [getBooks, { loading, error: booksError, data }] =
+    useLazyQuery(getBooksQuery);
 
   if ('errors' in props) {
     return (
@@ -41,14 +42,14 @@ export default function Home(props: Props) {
         <div key={user.id}>{user.name}</div>
       ))}
       <button
-        onClick={() => {
-          getBooks();
+        onClick={async () => {
+          await getBooks();
         }}
       >
         Request books
       </button>
       {loading && <div>Loading...</div>}
-      {error && <div>Error loading books: {error.message}</div>}
+      {booksError && <div>Error loading books: {booksError.message}</div>}
       {data && (
         <ul>
           {data.books.map((book: { id: number; name: string }) => (

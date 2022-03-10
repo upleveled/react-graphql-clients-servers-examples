@@ -2,3 +2,7 @@
 .eslintcache
 node_modules
 .env
+
+# For TypeScript Incremental Type Checks
+tsconfig.tsbuildinfo
+*.tsbuildinfo

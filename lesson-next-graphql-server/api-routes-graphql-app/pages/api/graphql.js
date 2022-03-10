@@ -22,14 +22,40 @@ const resolvers = {
   },
 };
 
-const apolloServer = new ApolloServer({ typeDefs, resolvers });
-
 export const config = {
   api: {
     bodyParser: false,
   },
 };
 
-await apolloServer.start();
+const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
-export default apolloServer.createHandler({ path: '/api/graphql' });
+const startServer = apolloServer.start();
+
+export default async function graphQlHandler(req, res) {
+  // For Apollo Studio
+  // https://stackoverflow.com/a/68890931/1268612
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://studio.apollographql.com',
+  );
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods, Access-Control-Allow-Origin, Access-Control-Allow-Credentials, Access-Control-Allow-Headers',
+  );
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'POST, GET, PUT, PATCH, DELETE, OPTIONS, HEAD',
+  );
+
+  if (req.method === 'OPTIONS') {
+    res.end();
+    return false;
+  }
+
+  await startServer;
+  await apolloServer.createHandler({
+    path: '/api/graphql',
+  })(req, res);
+}

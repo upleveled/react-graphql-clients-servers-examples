@@ -17,7 +17,7 @@ jobs:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       - name: Cache node_modules and Yarn cache
         id: node-modules-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ${{ env.YARN_CACHE }}

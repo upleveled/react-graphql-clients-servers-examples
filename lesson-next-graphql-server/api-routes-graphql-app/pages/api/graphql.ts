@@ -20,7 +20,7 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    users(parent: void, args: {}, context: { res: ServerResponse }) {
+    users(parent: void, args: { [key: string]: never }, context: { res: ServerResponse }) {
       console.log(parent, args, Object.keys(context));
       return [
         { id: 1, name: 'Anna' },
@@ -28,7 +28,7 @@ const resolvers = {
       ];
     },
 
-    books(parent: void, args: {}, context: { res: ServerResponse }) {
+    books(parent: void, args: { [key: string]: never }, context: { res: ServerResponse }) {
       console.log(parent, args, Object.keys(context));
       return [
         { id: 1, name: 'Book 1' },

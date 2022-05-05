@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "apollo-server": "3.6.7",
+    "apollo-server": "3.7.0",
     "graphql": "16.4.0",
     "nedb-promise": "2.0.1",
     "ramda": "0.28.0"
   },
   "devDependencies": {
-    "nodemon": "2.0.15"
+    "nodemon": "2.0.16"
   },
   "scripts": {
     "start": "node index.js",

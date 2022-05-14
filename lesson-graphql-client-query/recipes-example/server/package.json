@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "apollo-server": "3.7.0",
-    "graphql": "16.4.0",
+    "graphql": "16.5.0",
     "nedb-promise": "2.0.1",
     "ramda": "0.28.0"
   },

@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/client": "3.6.5",
+    "@apollo/client": "3.6.6",
     "@graphql-tools/schema": "8.3.13",
     "apollo-server-micro": "3.8.1",
     "graphql": "16.5.0",

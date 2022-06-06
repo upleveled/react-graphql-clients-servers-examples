@@ -1,11 +1,12 @@
 ## Intro
 
-https://www.nikgraf.com/
+https://ramonh.dev
 
-- studied Computer Science (now it helps a bit)
-- Consulting (Fortune 50 US Company, Ready2Order, Austrian Institute of Technology, Easyname, Eversports)
-- https://changefeed.app/
-- https://egghead.io/instructors/nik-graf
+- Software engineer with over 10 years experience.
+- Public speaker.
+- Community member.
+- Developer educator.
+- Live streamer.
 
 ## Who are you?
 
@@ -20,7 +21,7 @@ Data fetching via HTTP?
 - https://orf.at/static-extras/bulawindow.json
 
 Show fetching an requestion data in the browser?
--> https://egghead.io/instructors/nik-graf
+-> https://www.escuelafrontend.com/instructores/ramon-huidobro
 Why do we do this? In the end store data somewhere, retrieve it and write it to somewhere.
 
 ## GraphQL
@@ -40,14 +41,14 @@ _Hint_: Using CTRL + Space you can autocomplete fields in the GraphQL IDE.
 
 1. Use the StarWars GraphQL API `https://graphql.github.io/swapi-graphql/` to query:
 
-_Hint_: The schema has some duplications of data e.g. people & edges.node contain the same data. Nik will explain why so!
+_Hint_: The schema has some duplications of data e.g. people & edges.node contain the same data. Why's that?
 
 - Query all People
 - Query the names of all Starships related to Luke Skywalker!
 
 _Hint_: Get Luke by his id, which you can get from `allPeople`.
 
-- Query the population and all the residents on the planet Naboo.
+- Query the population and all the residents on the planet "Naboo".
 
 2. Use the [GitHub GraphQL API](https://docs.github.com/en/graphql/overview/explorer) to query
 
@@ -56,7 +57,7 @@ _Hint_: Get Luke by his id, which you can get from `allPeople`.
 
 ## Query data
 
-First, create a repository on GitHub, clone it and `cd` into the directory.
+First, create a repository on GitHub (let's base the name on the upcoming exercise. How about something like `graphql-github-profile`?), clone it and `cd` into the directory.
 
 Then create a new React app with `yarn create react-app .` and install [the ESLint config](https://github.com/upleveled/eslint-config-upleveled/)
 
@@ -64,7 +65,7 @@ Then we will go through https://www.apollographql.com/docs/react/get-started/
 
 ## Exercise
 
-Build you own Profile page based on GitHub e.g. https://github.com/nikgraf using the GitHub GraphQL Endpoint
+Build your own Profile page based on GitHub e.g. https://github.com/nikgraf using the GitHub GraphQL Endpoint
 
 - Show your name
 - Show your GitHub Avatar
@@ -99,13 +100,13 @@ const client = new ApolloClient({
 import { gql, useQuery } from "@apollo/client";
 
 const profileQuery = gql`
-  TODO YOUR QUERY
+  TODO: YOUR QUERY
 `;
 
 export default function Profile(props) {
   const { loading, error, data } = useQuery(profileQuery);
 
-  return null; // TOOD render your component
+  return null; // TODO: render your component
 }
 ```
 

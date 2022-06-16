@@ -10,7 +10,7 @@
     "ley": "dotenv ley"
   },
   "dependencies": {
-    "apollo-server-micro": "3.8.2",
+    "apollo-server-micro": "3.9.0",
     "dotenv": "16.0.1",
     "dotenv-cli": "5.1.0",
     "graphql": "16.5.0",
@@ -18,8 +18,8 @@
     "micro": "9.3.4",
     "next": "12.1.6",
     "postgres": "3.2.4",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "license": "MIT"
 }

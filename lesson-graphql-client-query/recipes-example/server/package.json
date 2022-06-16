@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "apollo-server": "3.8.2",
+    "apollo-server": "3.9.0",
     "graphql": "16.5.0",
     "nedb-promise": "2.0.1",
     "ramda": "0.28.0"

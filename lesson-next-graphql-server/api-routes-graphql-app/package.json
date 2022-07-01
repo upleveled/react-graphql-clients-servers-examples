@@ -8,12 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/client": "3.6.8",
-    "@graphql-tools/schema": "8.3.14",
+    "@apollo/client": "3.6.9",
+    "@graphql-tools/schema": "8.5.0",
     "apollo-server-micro": "3.9.0",
     "graphql": "16.5.0",
     "micro": "9.3.4",
-    "next": "12.1.6",
+    "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

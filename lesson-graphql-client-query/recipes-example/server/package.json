@@ -9,7 +9,7 @@
     "ramda": "0.28.0"
   },
   "devDependencies": {
-    "nodemon": "2.0.18"
+    "nodemon": "2.0.19"
   },
   "scripts": {
     "start": "node index.js",

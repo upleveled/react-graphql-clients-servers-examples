@@ -15,8 +15,8 @@
     "dotenv-cli": "6.0.0",
     "graphql": "16.5.0",
     "ley": "0.7.1",
-    "micro": "9.4.0",
-    "next": "12.2.3",
+    "micro": "9.4.1",
+    "next": "12.2.4",
     "postgres": "3.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"

@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "4.0.0",
-    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.3.0",
-    "@testing-library/user-event": "14.3.0",
+    "@testing-library/user-event": "14.4.2",
     "apollo-boost": "0.4.9",
     "graphql": "16.5.0",
     "react": "18.2.0",

@@ -13,10 +13,10 @@
     "apollo-server-micro": "3.10.1",
     "dotenv": "16.0.1",
     "dotenv-cli": "6.0.0",
-    "graphql": "16.5.0",
+    "graphql": "16.6.0",
     "ley": "0.7.1",
     "micro": "9.4.1",
-    "next": "12.2.4",
+    "next": "12.2.5",
     "postgres": "3.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"

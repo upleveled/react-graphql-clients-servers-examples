@@ -11,9 +11,9 @@
     "@apollo/client": "3.6.9",
     "@graphql-tools/schema": "9.0.1",
     "apollo-server-micro": "3.10.1",
-    "graphql": "16.5.0",
+    "graphql": "16.6.0",
     "micro": "9.4.1",
-    "next": "12.2.4",
+    "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

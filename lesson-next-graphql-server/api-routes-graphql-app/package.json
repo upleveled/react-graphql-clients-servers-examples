@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "@apollo/client": "3.6.9",
-    "@graphql-tools/schema": "9.0.2",
+    "@graphql-tools/schema": "9.0.3",
     "apollo-server-micro": "3.10.2",
     "graphql": "16.6.0",
     "micro": "9.4.1",
-    "next": "12.2.5",
+    "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

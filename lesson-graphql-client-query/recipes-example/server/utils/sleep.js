@@ -1,1 +1,5 @@
-module.exports = delay => new Promise(response => setTimeout(response, delay));
+module.exports = (delay) => {
+  return new Promise(response => {
+    setTimeout(response, delay);
+  });
+};

@@ -8,9 +8,6 @@
     "nedb-promise": "2.0.1",
     "ramda": "0.28.0"
   },
-  "devDependencies": {
-    "nodemon": "2.0.20"
-  },
   "scripts": {
     "start": "node index.js",
     "start:slow": "node index.js 1400",

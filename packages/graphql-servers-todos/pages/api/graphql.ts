@@ -93,6 +93,7 @@ export const config = {
 
 const server = new ApolloServer({ schema });
 await server.start();
+
 export default server.createHandler({
   path: '/api/graphql',
 });

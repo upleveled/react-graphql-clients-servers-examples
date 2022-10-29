@@ -1,9 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "checkJs": false,
-    "incremental": true,
-    "jsx": "preserve"
+    "checkJs": false
   },
   "include": [
     "**/.eslintrc.cjs",

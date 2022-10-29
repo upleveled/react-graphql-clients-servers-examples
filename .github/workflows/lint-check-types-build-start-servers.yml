@@ -37,9 +37,6 @@ jobs:
       # https://stackoverflow.com/a/63643845/1268612
       - run: timeout 6 yarn workspace graphql-clients-github-profile start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      # No build script required for this package
-      - run: timeout 6 yarn workspace recipes-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
-
       - run: yarn workspace graphql-servers-api-routes build
       - run: timeout 6 yarn workspace graphql-servers-api-routes start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
@@ -55,5 +52,5 @@ jobs:
       - run: yarn workspace recipes-example-client build
       - run: timeout 35 yarn workspace recipes-example-client start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      - run: yarn workspace recipes-example-server build
+      # No build script required for this package
       - run: timeout 35 yarn workspace recipes-example-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi

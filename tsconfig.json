@@ -4,5 +4,11 @@
   "compilerOptions": {
     "checkJs": true
   },
-  "exclude": ["node_modules", "build"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "packages/react-hooks-and-best-practices",
+    "packages/recipes-example-client",
+    "packages/recipes-example-server"
+  ]
 }

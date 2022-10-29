@@ -10,25 +10,9 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-      - name: Set yarn cache directory
-        run: echo "::set-env name=YARN_CACHE::$(yarn cache dir)"
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      - name: Cache node_modules and Yarn cache
-        id: node-modules-cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ${{ env.YARN_CACHE }}
-            node_modules
-            */*/node_modules
-          key: build-node-modules-cache-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            build-node-modules-cache-
-      - name: If cache miss, install dependencies
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+          node-version: '18'
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
       - run: yarn eslint . --max-warnings 0
       - run: yarn tsc
 

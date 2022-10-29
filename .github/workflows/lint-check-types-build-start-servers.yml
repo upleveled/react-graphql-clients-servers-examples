@@ -24,9 +24,6 @@ jobs:
       - run: yarn workspace graphql-servers-api-routes build
       - run: timeout 6 yarn workspace graphql-servers-api-routes start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      - run: yarn workspace graphql-servers-api-routes build
-      - run: timeout 6 yarn workspace graphql-servers-api-routes start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
-
       # No build script required for this package
       - run: timeout 6 yarn workspace graphql-servers-basic-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 

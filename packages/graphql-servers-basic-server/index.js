@@ -34,7 +34,8 @@ const resolvers = {
     books: () => books,
   },
   Book: {
-    createdAt: (root) => new Date(root.created_at).toISOString(),
+    createdAt: (/** @type {{created_at: Date}} */ root) =>
+      new Date(root.created_at).toISOString(),
   },
 };
 

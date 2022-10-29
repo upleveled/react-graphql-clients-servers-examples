@@ -5,7 +5,9 @@ import {
   InMemoryCache,
   useQuery,
 } from '@apollo/client';
+import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 import Head from 'next/head';
+import { Repo } from './';
 
 const client = new ApolloClient({
   uri: 'https://api.github.com/graphql',
@@ -31,7 +33,11 @@ const githubQuery = gql`
   }
 `;
 
-const Profile = (props) => {
+type ProfileProps = {
+  username: string;
+};
+
+function Profile(props: ProfileProps) {
   const { loading, error, data } = useQuery(githubQuery, {
     variables: {
       name: props.username,
@@ -49,15 +55,19 @@ const Profile = (props) => {
       </Head>
       <img src={data.user.avatarUrl} alt="" />
       <ul>
-        {data.user.repositories.nodes.map((repo) => {
+        {data.user.repositories.nodes.map((repo: Repo) => {
           return <li key={repo.id}>{repo.name}</li>;
         })}
       </ul>
     </div>
   );
+}
+
+type Props = {
+  username: string;
 };
 
-export default function Home(props) {
+export default function Home(props: Props) {
   return (
     <ApolloProvider client={client}>
       <div className="container">
@@ -68,6 +78,13 @@ export default function Home(props) {
   );
 }
 
-export function getServerSideProps(context) {
-  return { props: { username: context.params.name } };
+export function getServerSideProps(
+  context: GetServerSidePropsContext,
+): GetServerSidePropsResult<Props> {
+  return {
+    props: {
+      username:
+        typeof context.params?.name === 'string' ? context.params.name : '',
+    },
+  };
 }

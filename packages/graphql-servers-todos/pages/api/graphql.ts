@@ -38,20 +38,20 @@ const typeDefs = gql`
   }
 `;
 
-async function getTodos() {
-  return await sql`select * from todos`;
-}
+// async function getTodos() {
+//   return await sql`select * from todos`;
+// }
 
-async function getFilteredTodos(checked) {
+async function getFilteredTodos(checked: boolean) {
   return await sql`select * from todos WHERE checked = ${checked}`;
 }
 
-async function getTodo(id) {
+async function getTodo(id: number) {
   const result = await sql`select * from todos WHERE id = ${id}`;
   return result[0];
 }
 
-async function createTodo(title) {
+async function createTodo(title: string) {
   const result = await sql`INSERT INTO todos (title, checked)
   VALUES (${title}, ${false}) RETURNING id, title, checked;`;
   return result[0];
@@ -59,29 +59,26 @@ async function createTodo(title) {
 
 const resolvers = {
   Mutation: {
-    createTodo: (root, args) => {
+    createTodo: (parent: void, args: { title: string }) => {
       return createTodo(args.title);
     },
   },
   Query: {
-    todos: (root, args) => {
+    todos: (parent: void, args: { filterChecked: boolean }) => {
       if (args.filterChecked === true) {
         return getFilteredTodos(true);
-      } else if (args.filterChecked === false) {
-        return getFilteredTodos(false);
-      } else {
-        return getTodos();
       }
+      return getFilteredTodos(false);
     },
-    todo: (root, args) => {
+    todo: (parent: void, args: { id: number }) => {
       // return todos.find((todo) => todo.id === args.id);
       return getTodo(args.id);
     },
     users() {
       return users;
     },
-    user(parent, { username }) {
-      return users.find((user) => user.username === username);
+    user(parent: void, args: { username: string }) {
+      return users.find((user) => user.username === args.username);
     },
   },
 };

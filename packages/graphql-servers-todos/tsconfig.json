@@ -3,6 +3,5 @@
   "compilerOptions": {
     "incremental": true,
     "jsx": "preserve"
-  },
-  "exclude": ["../api-routes-graphql-app"]
+  }
 }

@@ -7,6 +7,11 @@ import {
 } from '@apollo/client';
 import Head from 'next/head';
 
+export type Repo = {
+  id: number;
+  name: string;
+};
+
 const client = new ApolloClient({
   uri: 'https://api.github.com/graphql',
   cache: new InMemoryCache(),
@@ -45,7 +50,7 @@ const Profile = () => {
       </Head>
       <img src={data.user.avatarUrl} alt="" />
       <ul>
-        {data.user.repositories.nodes.map((repo) => {
+        {data.user.repositories.nodes.map((repo: Repo) => {
           return <li key={repo.id}>{repo.name}</li>;
         })}
       </ul>

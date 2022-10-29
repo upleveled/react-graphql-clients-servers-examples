@@ -1,5 +1,7 @@
 // Create the todos table
-exports.up = async (sql) => {
+exports.up = async (
+  /** @type {import('postgres').Sql<Record<string, string>>} */ sql,
+) => {
   await sql`
     CREATE TABLE todos(
       id SERIAL PRIMARY KEY,
@@ -10,7 +12,9 @@ exports.up = async (sql) => {
 };
 
 // Delete the todos table
-exports.down = async (sql) => {
+exports.down = async (
+  /** @type {import('postgres').Sql<Record<string, string>>} */ sql,
+) => {
   await sql`
     DROP TABLE todos
   `;

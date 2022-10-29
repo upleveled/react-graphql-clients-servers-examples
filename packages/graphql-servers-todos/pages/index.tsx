@@ -1,8 +1,16 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import queryGraphql from '../shared/query-graphql';
 
-import queryGraphql from '../shared/query-graphql'
+export type User = {
+  name: string;
+  username: string;
+};
 
-export default function UserListing({ users }) {
+type Props = {
+  users: User[];
+};
+
+export default function UserListing({ users }: Props) {
   return (
     <div>
       <h1>User Listing</h1>
@@ -16,7 +24,7 @@ export default function UserListing({ users }) {
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
@@ -27,6 +35,10 @@ export async function getStaticProps() {
         username
       }
     }
-  `)
-  return { props: { users } }
+  `);
+  return {
+    props: {
+      users,
+    },
+  };
 }

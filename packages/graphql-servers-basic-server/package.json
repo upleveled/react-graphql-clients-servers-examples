@@ -1,5 +1,5 @@
 {
-  "name": "basic-server",
+  "name": "graphql-servers-basic-server",
   "version": "1.0.0",
   "private": true,
   "main": "index.js",

@@ -31,25 +31,28 @@ jobs:
         run: yarn install --frozen-lockfile
       - run: yarn eslint . --max-warnings 0
 
-      - run: yarn workspace github-profile build
+      - run: yarn workspace graphql-clients-github-profile build
       # Run server for 6 seconds, and succeed if it didn't throw an error
       # https://stackoverflow.com/a/63643845/1268612
-      - run: timeout 6 yarn workspace github-profile start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
-
-      - run: yarn workspace github-profile-experiment build
-      - run: timeout 35 yarn workspace github-profile-experiment start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
-
-      - run: yarn workspace recipes-app build
-      - run: timeout 35 yarn workspace recipes-app start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+      - run: timeout 6 yarn workspace graphql-clients-github-profile start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
       # No build script required for this package
       - run: timeout 6 yarn workspace recipes-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      - run: yarn workspace api-routes-graphql build
-      - run: timeout 6 yarn workspace api-routes-graphql start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+      - run: yarn workspace graphql-servers-api-routes build
+      - run: timeout 6 yarn workspace graphql-servers-api-routes start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: yarn workspace graphql-servers-api-routes build
+      - run: timeout 6 yarn workspace graphql-servers-api-routes start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
       # No build script required for this package
-      - run: timeout 6 yarn workspace basic-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+      - run: timeout 6 yarn workspace graphql-servers-basic-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      - run: yarn workspace api-routes-apollo-server-3 build
-      - run: timeout 6 yarn workspace api-routes-apollo-server-3 start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+      - run: yarn workspace graphql-servers-todos build
+      - run: timeout 6 yarn workspace graphql-servers-todos start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: yarn workspace recipes-example-client build
+      - run: timeout 35 yarn workspace recipes-example-client start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: yarn workspace recipes-example-server build
+      - run: timeout 35 yarn workspace recipes-example-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi

@@ -97,8 +97,8 @@ PGPASSWORD=todos_next
 
 Switch back to your editor and create a folder called `migrations`. In the `migrations` folder:
 
-1. Create the file `00000-create-todos-table.js` and copy and paste the content from https://github.com/upleveled/react-graphql-frontend-backend-lessons/blob/main/lesson-next-graphql-server/todos3/migrations/00000-create-todos-table.js
-2. Create the file `00001-insert-todos.js` and copy and paste the content from https://github.com/upleveled/react-graphql-frontend-backend-lessons/blob/main/lesson-next-graphql-server/todos3/migrations/00001-insert-todos.js
+1. Create the file `00000-create-todos-table.js` and copy and paste the content from https://github.com/upleveled/react-graphql-clients-servers-examples/blob/main/packages/graphql-servers-todos/migrations/00000-create-todos-table.js
+2. Create the file `00001-insert-todos.js` and copy and paste the content from https://github.com/upleveled/react-graphql-clients-servers-examples/blob/main/packages/graphql-servers-todos/migrations/00001-insert-todos.js
 
 In a terminal, run the migrations:
 
@@ -109,8 +109,8 @@ yarn dotenv ley up
 Connect to the database:
 
 ```js
-require("dotenv").config();
-const postgres = require("postgres");
+require('dotenv').config();
+const postgres = require('postgres');
 const sql = postgres();
 ```
 

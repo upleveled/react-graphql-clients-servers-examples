@@ -1,17 +1,21 @@
 {
-  "name": "github-profile",
-  "version": "0.1.0",
+  "name": "graphql-servers-api-routes",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "@apollo/client": "3.7.1",
+    "@graphql-tools/schema": "9.0.5",
+    "apollo-server-micro": "3.10.3",
     "graphql": "16.6.0",
+    "micro": "9.4.1",
     "next": "13.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
-  }
+  },
+  "license": "ISC"
 }

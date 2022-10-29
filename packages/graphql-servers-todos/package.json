@@ -1,21 +1,25 @@
 {
-  "name": "api-routes-graphql",
+  "name": "graphql-servers-todos",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "export": "next export",
+    "start": "next start",
+    "ley": "dotenv ley"
   },
   "dependencies": {
-    "@apollo/client": "3.7.1",
-    "@graphql-tools/schema": "9.0.5",
     "apollo-server-micro": "3.10.3",
+    "dotenv": "16.0.3",
+    "dotenv-cli": "6.0.0",
     "graphql": "16.6.0",
+    "ley": "0.8.1",
     "micro": "9.4.1",
     "next": "13.0.0",
+    "postgres": "3.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
-  "license": "ISC"
+  "license": "MIT"
 }

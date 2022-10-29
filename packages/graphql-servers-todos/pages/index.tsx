@@ -17,9 +17,7 @@ export default function UserListing({ users }: Props) {
       <ul>
         {users.map((user) => (
           <li key={user.username}>
-            <Link href="/[username]" as={`/${user.username}`}>
-              <a>{user.name}</a>
-            </Link>
+            <Link href={`/${user.username}`}>{user.name}</Link>
           </li>
         ))}
       </ul>

@@ -1,33 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "UpLeveled Node + React TSConfig",
+  "extends": "@upleveled/eslint-config-upleveled/tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "target": "es2015",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "strict": true
+    "checkJs": true,
+    "target": "esnext"
   },
-  "include": [
-    ".eslintrc.cjs",
-    "**/.eslintrc.cjs",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.cjs",
-    "**/*.mjs"
-  ],
-  "exclude": ["node_modules", "build"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "packages/react-hooks-and-best-practices",
+    "packages/recipes-example-client",
+    "packages/recipes-example-server"
+  ]
 }

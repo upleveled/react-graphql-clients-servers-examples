@@ -1,41 +1,26 @@
 {
-  "name": "react-graphql-frontend-backend-lessons",
+  "name": "react-graphql-clients-servers-examples",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:upleveled/react-graphql-frontend-backend-lessons.git",
+  "repository": "git@github.com:upleveled/react-graphql-clients-servers-examples.git",
   "private": true,
   "workspaces": {
     "packages": [
-      "lesson-graphql-client-query/github-profile",
-      "lesson-graphql-client-query/github-profile-experiment",
-      "lesson-graphql-client-query/recipes-example/app",
-      "lesson-graphql-client-query/recipes-example/server",
-      "lesson-next-graphql-server/api-routes-graphql-app",
-      "lesson-next-graphql-server/basic-server",
-      "lesson-next-graphql-server/todos",
-      "lesson-next-graphql-server/todos2",
-      "lesson-next-graphql-server/todos3",
-      "lesson-react-hooks-and-good-practices/app"
-    ],
-    "nohoist": [
-      "**/next",
-      "**/babel-preset-react-app",
-      "**/babel-preset-react-app/*",
-      "api-routes-apollo-server-3/**/*"
+      "packages/*"
     ]
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.19.1",
-    "@next/eslint-plugin-next": "12.3.1",
+    "@next/eslint-plugin-next": "13.0.0",
     "@types/node": "18.11.7",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@typescript-eslint/parser": "5.41.0",
-    "@upleveled/eslint-config-upleveled": "3.3.7",
+    "@upleveled/eslint-config-upleveled": "3.3.8",
     "@upleveled/eslint-plugin-upleveled": "2.1.6",
     "eslint": "8.26.0",
-    "eslint-config-next": "12.3.1",
+    "eslint-config-next": "13.0.0",
     "eslint-config-react-app": "7.0.1",
     "eslint-import-resolver-typescript": "3.5.2",
     "eslint-plugin-cypress": "2.12.1",

@@ -1,0 +1,15 @@
+{
+  "name": "graphql-servers-basic-server",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "author": "Nik Graf",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-server": "3.10.3",
+    "graphql": "16.6.0"
+  }
+}

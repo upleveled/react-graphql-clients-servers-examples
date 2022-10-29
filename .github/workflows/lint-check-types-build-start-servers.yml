@@ -1,0 +1,37 @@
+name: Lint, Check Types, Build, Start Servers
+on: push
+
+jobs:
+  build:
+    name: Lint, Check Types, Build, Start Servers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
+      - run: yarn eslint . --max-warnings 0
+      - run: yarn tsc
+
+      - run: yarn workspace graphql-clients-github-profile build
+      # Run server for 6 seconds, and succeed if it didn't throw an error
+      # https://stackoverflow.com/a/63643845/1268612
+      - run: timeout 6 yarn workspace graphql-clients-github-profile start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: yarn workspace graphql-servers-api-routes build
+      - run: timeout 6 yarn workspace graphql-servers-api-routes start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      # No build script required for this package
+      - run: timeout 6 yarn workspace graphql-servers-basic-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: yarn workspace graphql-servers-todos build
+      - run: timeout 6 yarn workspace graphql-servers-todos start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      - run: yarn workspace recipes-example-client build
+      - run: timeout 35 yarn workspace recipes-example-client start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+
+      # No build script required for this package
+      - run: timeout 35 yarn workspace recipes-example-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi

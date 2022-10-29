@@ -1,9 +1,9 @@
-name: Lint, Build, Start Servers
+name: Lint, Check Types, Build, Start Servers
 on: push
 
 jobs:
   build:
-    name: Lint, Build, Start Servers
+    name: Lint, Check Types, Build, Start Servers
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,6 +30,7 @@ jobs:
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
       - run: yarn eslint . --max-warnings 0
+      - run: yarn tsc
 
       - run: yarn workspace graphql-clients-github-profile build
       # Run server for 6 seconds, and succeed if it didn't throw an error

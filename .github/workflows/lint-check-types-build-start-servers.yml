@@ -30,8 +30,8 @@ jobs:
       - run: yarn workspace graphql-servers-todos build
       - run: timeout 6 yarn workspace graphql-servers-todos start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      - run: yarn workspace recipes-example-client build
-      - run: timeout 35 yarn workspace recipes-example-client start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+      # - run: yarn workspace recipes-example-client build
+      # - run: timeout 35 yarn workspace recipes-example-client start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
 
-      # No build script required for this package
-      - run: timeout 35 yarn workspace recipes-example-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
+      # # No build script required for this package
+      # - run: timeout 35 yarn workspace recipes-example-server start || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi

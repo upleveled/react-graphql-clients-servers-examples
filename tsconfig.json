@@ -9,7 +9,7 @@
     "node_modules",
     "build",
     "packages/react-hooks-and-best-practices",
-    "packages/recipes-example-client",
-    "packages/recipes-example-server"
+    "unmaintainedPackages/recipes-example-client",
+    "unmaintainedPackages/recipes-example-server"
   ]
 }

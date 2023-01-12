@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@apollo/client": "3.7.3",
-    "@graphql-tools/schema": "9.0.12",
+    "@graphql-tools/schema": "9.0.13",
     "apollo-server-micro": "3.11.1",
     "graphql": "16.6.0",
     "micro": "10.0.1",

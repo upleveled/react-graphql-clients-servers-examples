@@ -1,3 +1,7 @@
+# UNMAINTAINED
+
+This repo was archived on 9 July 2023 - new examples can be found under [the `upleveled` GitHub organization](https://github.com/upleveled), eg. [`upleveled/graphql-example-spring-2023-austria-vienna`](https://github.com/upleveled/graphql-example-spring-2023-austria-vienna)
+
 ## Intro
 
 https://ramonh.dev
